@@ -36,7 +36,7 @@ class Day extends React.Component {
 			<div>
 			<h1 style={{marginTop : "60px"}}>Today is</h1>
 			<h1 style={styles}>Week {week} Day {day}</h1>
-			<h3 style={{fontWeight:"bold"}}>{day === 1 ? "Reminder : Create Pull Request" : ""}</h3>
+			<h3 style={{fontWeight:"bold"}}>{day === 5 ? "Reminder : Create Pull Request" : ""}</h3>
 			</div>
 		)
 	}
