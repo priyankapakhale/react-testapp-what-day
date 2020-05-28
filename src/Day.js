@@ -1,7 +1,13 @@
 import React from 'react'
 import randomColor from 'randomcolor'
-
+import Music from './Music'
 class Day extends React.Component {
+	constructor() {
+		super()
+		this.state = {
+			color : randomColor()
+		}
+	}
 
 	getCurrentDate() {
 		let today = new Date()
@@ -29,14 +35,15 @@ class Day extends React.Component {
 	render() {
 		const styles = {
 			fontSize : "100px",
-			color : randomColor()
+			color : this.state.color
 		}
 		const {week, day} = this.calculateToday()
 		return (
 			<div>
-			<h1 style={{marginTop : "60px"}}>Today is</h1>
-			<h1 style={styles}>Week {week} Day {day}</h1>
-			<h3 style={{fontWeight:"bold"}}>{day === 1 ? "Reminder : Create Pull Request" : ""}</h3>
+				<h1 style={{marginTop : "60px"}}>Today is</h1>
+				<h1 style={styles}>Week {week} Day {day}</h1>
+				<h3 style={{fontWeight:"bold"}}>{day === 1 ? "Reminder : Create Pull Request" : ""}</h3>
+				<Music />
 			</div>
 		)
 	}
