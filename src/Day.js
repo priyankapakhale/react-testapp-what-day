@@ -9,19 +9,14 @@ class Day extends React.Component {
 		}
 	}
 
-	getCurrentDate() {
-		let today = new Date()
-		let date = today.getDate()
-		let month = today.getMonth() + 1
-		return ({date : date, month : month})
+	date_diff_indays() {
+		let dt1 = new Date("05/04/2020")
+		let dt2 = new Date()
+		return Math.floor((Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) - Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate()) ) /(1000 * 60 * 60 * 24));
 	}
 
 	calculateToday() {
-		const {date, month} = this.getCurrentDate()
-		let startDate = 4
-		let startMonth = 5
-
-		let diff = date - startDate
+		let diff = this.date_diff_indays()
 		let numWeeks = Math.floor(diff/7) + 1
 		let numDay = diff%7 + 1
 		console.log(numWeeks, numDay)
